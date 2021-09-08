@@ -1,0 +1,12 @@
+{
+  "name": "ratingFront",
+  "integrations": {
+    "capacitor": {
+      "enabled": true
+    },
+    "cordova": {
+      
+    }
+  },
+  "type": "angular"
+}

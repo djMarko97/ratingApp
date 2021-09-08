@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="home" class="btnBack"></ion-back-button>
+    </ion-button>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="gymname"
+    type="text"
+    showCancelButton = "focus"
+    (ionChange)="searchGym()"
+    (ionCancel)="onCancel($event)"
+    (ionClear)="onClear($event)"
+  >
+  </ion-searchbar>
+
+  <ion-list *ngIf="showList">
+    <ion-item *ngFor= "let gym of searchResults">
+      <h2>
+        <button ion-item *ngIf="results && showResults.length > 0" (click)="gymProfile(gym)">
+          {{gym.gymname}}
+        </button>
+      </h2>
+      <button ion-item *ngIf="noResults && showResults == 0">
+        {{gym.gymname}}
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

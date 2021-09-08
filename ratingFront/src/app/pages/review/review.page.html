@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+        <ion-back-button icon="arrow-back-outline" defaultHref="home" class="btnBack"></ion-back-button>
+    </ion-button>
+    <ion-title>{{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label color="black" position="stacked">Service</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="service" pin="true"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="black" position="stacked">Staff</ion-label>
+    <ion-range  min="1" max="5" [(ngModel)]="staff" pin="true"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="black" position="stacked">Equipement</ion-label>
+    <ion-range  min="1" max="5" [(ngModel)]="equipement" pin="true"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="black" position="stacked">Hygiene</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="hygiene" pin="true"></ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="black" position="stacked">Overall</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="overall" pin="true"></ion-range>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-label color="black" position="stacked">Review</ion-label>
+      <ion-col size="12">
+        <ion-textarea [(ngModel)]="review"></ion-textarea>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <ion-button expand="block" class="btnAdd" (click)="addReview()">Add review</ion-button>
+  </ion-item>
+
+</ion-content>

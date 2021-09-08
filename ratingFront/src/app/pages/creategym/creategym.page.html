@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+        <ion-back-button icon="arrow-back-outline" defaultHref="home" class="btnBack"></ion-back-button>
+    </ion-button>
+    <ion-title>Register Gym</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <ion-item>
+      <ion-label color="black" position="stacked">Gym Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="black" position="stacked">Address</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="black" position="stacked">Place</ion-label>
+      <ion-input type="text" [(ngModel)]="place"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="black" position="stacked">Type</ion-label>
+      <ion-input type="text" [(ngModel)]="type"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="black" position="stacked">Website</ion-label>
+      <ion-input type="text" [(ngModel)]="website"></ion-input>
+    </ion-item>
+    
+      <ion-button expand="block" class="btnRegister" (click)="register()">Register</ion-button>
+
+  </div>
+
+</ion-content>

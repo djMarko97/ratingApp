@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="header" *ngIf="user">Hello, {{user.fullname}}</h3>
+  <p class="text-content">
+    What would you like to do today?
+  </p>
+  <ion-card class="card1">
+    <ion-icon name="log-in"></ion-icon>
+    <ion-card-header class="header1">
+      Add Gym
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-content">
+        Add gym profile. Registered members can give reviews.
+      </p>
+      <ion-button class="btn1 button" expand="block" (click)="addGym()">Add</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card2">
+    <ion-icon name="search"></ion-icon>
+    <ion-card-header class="header1">
+      Search
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-content">
+        Search through our gym catalogue and find your gym.
+      </p>
+      <ion-button class="btn2 button" expand="block" (click)="goToSearch()">Search</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card3">
+    <ion-icon name="star"></ion-icon>
+    <ion-card-header class="header1">
+      Rate
+    </ion-card-header>
+    <ion-card-content>
+      <p class="text-content">
+        Rate and review other gyms and get your gym reviewed.
+      </p>
+      <ion-button class="btn3 button" (click)="reviewPage()" expand="block">Rate</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

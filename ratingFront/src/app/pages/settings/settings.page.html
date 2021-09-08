@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img *ngIf="user" src="https://res.cloudinary.com/apprating/image/upload/v{{user.imageVersion}}/{{user.imageId}}">
+      </ion-avatar>
+
+      <ion-label class="account">
+        Account
+        <p class="name" *ngIf="user">{{user.fullname}}</p>
+      </ion-label>
+
+      <button class="btn" item-end (click)="addImage()">Add Image</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="user">
+    <ion-list-header class="list">Gyms</ion-list-header>
+    <ion-item *ngFor="let usergym of user.gyms">
+      <ion-avatar item-start>
+        
+        <img *ngIf="user" src="https://res.cloudinary.com/apprating/image/upload/v{{usergym.gym.imageVersion}}/{{usergym.gym.imageId}}">
+      </ion-avatar>
+
+      <ion-label class="gym">
+        {{usergym.gym.gymname}}
+      </ion-label>
+
+      <button class="btn" item-end (click)="addLogo(usergym.gym)">Add Logo</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+  

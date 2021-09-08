@@ -1,0 +1,19 @@
+<ion-content>
+  <div>
+    <div class="logo">
+      <img src="https://us.123rf.com/450wm/taronin/taronin1710/taronin171000021/87806419-gym-sign-with-spartan-helmet-.jpg?ver=6">
+    </div>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="fullname" name="fullname" placeholder="Fullname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="email" [(ngModel)]="email" name="email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-button class="btn" expand="full" (click)="userSignUp()">Sign Up</ion-button>
+    <br>
+    <ion-button fill="clear" expand="block" class="signup" (click)="loginPage()">Alredy have an account? Login</ion-button>
+  </div>
+</ion-content>

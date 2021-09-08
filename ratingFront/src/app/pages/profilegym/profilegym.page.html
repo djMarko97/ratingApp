@@ -1,0 +1,131 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="home" class="btnBack"></ion-back-button>
+    </ion-button>
+    <ion-row>
+      <ion-col>
+        <ion-title>Gym</ion-title>
+      </ion-col>
+
+      <ion-col>
+        <ion-button (click)="viewReviews(profile)">Reviews</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <span>
+    <ion-button expand="block" class="btn1" (click)="reviewPage(profile)">Write Reviews</ion-button>
+  </span>
+  <span>
+    <ion-button expand="block" class="btn2" (click)="memberRegister(profile)">Register as a Member</ion-button>
+  </span>
+
+  <ion-card class="card1">
+
+    <ion-card-content>
+      <ion-card-title>
+        {{ profile.gymname }}
+      </ion-card-title>
+
+      <p class="pPlace">
+        <ion-icon name="pin" class="iconClass"></ion-icon>
+        <span class="pSpan">
+          {{profile.place}}, {{profile.address}}
+        </span>
+      </p>
+
+      <p class="pType">
+        <ion-icon name="archive" class="iconClass"></ion-icon>
+        {{profile.type}}
+      </p>
+
+      <p class="pSite">
+        <ion-icon name="ios-link" class="iconClass"></ion-icon>
+        {{profile.website}}
+      </p>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card class="card2">
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-row class="pRow">
+            <p>{{profile.rating.length}} ratings received</p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-row class="pRow1">
+            <p>{{ratingSum(profile.ratingOverall)}} Total Stars</p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-row class="pRow2">
+            <span class="avg">
+              <app-ratingnew [ratenumber]="averageRating(profile.ratingOverall)" ></app-ratingnew>
+              <p>({{averageRating(profile.ratingOverall)}})</p>
+            </span>
+          </ion-row>
+
+          <ion-row class="pText2">
+            <p>Based on {{profile.rating.length}} rating(s)</p>
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card3">
+    <ion-card-content>
+      <ion-row>
+        <ion-col class="col1">
+          Service
+        </ion-col>
+        <ion-col class="col2">
+          <app-ratingnew [ratenumber]="averageRating(profile.serviceTotal)"></app-ratingnew>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="col1">
+          Staff
+        </ion-col>
+        <ion-col class="col2">
+          <app-ratingnew [ratenumber]="averageRating(profile.staffTotal)"></app-ratingnew>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="col1">
+          Equipement
+        </ion-col>
+        <ion-col class="col2">
+          <app-ratingnew [ratenumber]="averageRating(profile.equipementTotal)"></app-ratingnew>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="col1">
+          Hygiene
+        </ion-col>
+        <ion-col class="col2">
+          <app-ratingnew [ratenumber]="averageRating(profile.hygieneTotal)"></app-ratingnew>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

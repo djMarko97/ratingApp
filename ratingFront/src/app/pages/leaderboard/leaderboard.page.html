@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="home" class="btnBack"></ion-back-button>
+    </ion-button>
+    <ion-title>Top Rated</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let g of gyms; let i = index">
+    <ion-row>
+      <ion-col size="2" class="avatarCol">
+
+        <ion-avatar item-start>
+          <img *ngIf="g.imageVersion !==''" src="https://res.cloudinary.com/apprating/image/upload/v{{g.imageVersion}}/{{g.imageId}}" >
+          <img *ngIf="g.imageVersion ===''" src="http//placehold.it/10x10">
+        </ion-avatar>
+
+      </ion-col>
+
+      <ion-col size="10" class="rowCol">
+        <h2 class="gymname">
+          {{g.gymname}}
+        </h2>
+        <ion-col>
+          <ion-row>
+            <ion-col size="12" class="dataCol">
+              <span>
+                <ion-icon name="star" class="iconClass"></ion-icon>
+                {{g.totalStars}} Total Stars
+              </span>
+            </ion-col>
+            <ion-col size="12">
+              <ion-icon name="podium-outline" class="iconClass"></ion-icon>
+              #{{i+1}}
+            </ion-col>
+
+            <ion-col size="12" class="rating">
+              
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-item>
+</ion-content>

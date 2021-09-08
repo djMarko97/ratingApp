@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="home" class="btnBack"></ion-back-button>
+    </ion-button>
+    <ion-title>All Gyms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let g of gyms" (click)="gymProfile(g)">
+    <ion-row>
+      <ion-col size="2" class="avatarCol">
+
+        <ion-avatar item-start>
+          <img *ngIf="g.imageVersion !==''" src="https://res.cloudinary.com/apprating/image/upload/v{{g.imageVersion}}/{{g.imageId}}" >
+          <img *ngIf="g.imageVersion ===''" src="http//placehold.it/10x10">
+        </ion-avatar>
+
+      </ion-col>
+
+      <ion-col size="10" class="rowCol">
+        <h2 class="gymname">
+          {{g.gymname}}
+        </h2>
+        <ion-col>
+          <ion-row>
+            <ion-col size="12" class="dataCol">
+              <span>
+                <ion-icon name="barbell-outline" class="iconClass"></ion-icon>
+                {{g.type}}
+              </span>
+            </ion-col>
+            <ion-col size="12">
+              <ion-icon name="pin" class="iconClass"></ion-icon>
+              {{g.place}}, {{g.address}}
+            </ion-col>
+
+            <ion-col size="12" class="rating">
+              <span class="avg">
+                <rating [ngModel]="averageRating(g.ratingOverall)" readOnly="true" max="5"
+                  emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                ({{averageRating(g.ratingOverall)}})
+              </span>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-item>
+</ion-content>

@@ -1,0 +1,57 @@
+.label-stacked {
+    font-size: 17px;
+    font-weight: 500;
+    float: left;
+    
+}
+
+ion-item {
+    --border-style: inherit !important;
+    margin-bottom: -15px;
+}
+
+
+ion-grid {
+    margin-left: 9px !important;
+}
+
+ion-range.range-slider{
+    padding: 0px !important;
+    margin-left: 12px !important;
+    margin-top: 5px;
+    
+}
+
+ion-textarea {
+    margin-left: -3px !important;
+}
+
+.item-inner {
+    border: none !important;
+    
+}
+
+
+.item-inner .button {
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+ion-textarea{
+    border: 1px solid black;
+    height: 100px;
+    padding-top: 0px !important;
+}
+
+.grid .label-md{
+    padding-left: 10px;
+    
+}
+
+.btnAdd{
+    --background: black;
+}
+
+
