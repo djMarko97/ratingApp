@@ -3,9 +3,9 @@ const Gym = require('../models/gym');
 const cloudinary = require('cloudinary');
 
 cloudinary.config({
-  cloud_name: 'apprating',
-  api_key: '443273869594613',
-  api_secret: 'uFGtvWhDjpCHWBcCvXlc18SsPbQ'
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET 
 });
 
 exports.addImage = async (req, res) => {

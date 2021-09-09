@@ -6,11 +6,16 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const cors = require('cors');
 const passport = require('passport');
+const helmet = require('helmet');
+const compression = require('compression');
 
 const app = express();
 
 mongoose.Promise = global.Promise; //inicijalizacija
-mongoose.connect('mongodb://localhost/rateapp'); //povezivanje baze sa lokalnim hostom
+mongoose.connect(process.env.MONGODB) //povezivanje baze sa lokalnim hostom
+
+app.use(helmet());
+app.use(compression());
 
 require('./passport/passport-local');
 
@@ -30,7 +35,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use(session({
-    secret: 'thisisasecretkey',
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({
