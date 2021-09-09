@@ -4,15 +4,16 @@
       <div>
         <ion-row style="align-items:center">
           <ion-col size="12" class="imgCol">
-            <img *ngIf="user" class="user-avatar round" src="https://res.cloudinary.com/apprating/image/upload/v{{user.imageVersion}}/{{user.imageId}}" >
+            <img *ngIf="user" class="user-avatar round"
+              src="https://res.cloudinary.com/apprating/image/upload/v{{user.imageVersion}}/{{user.imageId}}">
           </ion-col>
         </ion-row>
         <ion-row style="justify-content: center">
           <h3 *ngIf="user">{{user.fullname}}</h3>
         </ion-row>
       </div>
-      
-      <ion-list lines="none" class="ion-list-hydrated">
+
+      <ion-list class="ion-list-hydrated">
         <ion-menu-toggle *ngFor="let p of appPages">
           <ion-item [href]="p.url">
             <ion-icon [name]="p.icon" slot="start"></ion-icon>
@@ -36,10 +37,10 @@
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
-    
-      </ion-content>
-    
-    </ion-menu>
-  
+
+    </ion-content>
+
+  </ion-menu>
+
   <ion-router-outlet main></ion-router-outlet>
 </ion-app>

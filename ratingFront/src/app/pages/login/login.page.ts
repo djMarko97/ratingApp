@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { RegisterService } from 'src/app/services/register.service';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',

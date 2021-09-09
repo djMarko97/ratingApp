@@ -19,7 +19,7 @@ export class ProfilegymPage implements OnInit {
     private activatedRoute: ActivatedRoute, 
     private alertCtrl: AlertController, 
     private gym: GymService,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController,) {
 
     this.activatedRoute.queryParamMap
       .subscribe((paramsMap: Params) =>{

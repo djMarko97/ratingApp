@@ -38,7 +38,7 @@ export class CreategymPage implements OnInit{
 
   
 
-  async register(){
+  register(){
     this.gym.createGym(this.name,this.address,this.place,this.type,this.website, this.userId)
       .subscribe(res =>{
         

@@ -22,13 +22,12 @@ export class AppComponent {
 
   ];
 
-
-
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
-
-
-  constructor(private storage: Storage, private router: Router, private navCtrl: NavController, private gym: GymService, private storageService: StorageService) {
+  constructor(
+    private storage: Storage, 
+    private router: Router, 
+    private navCtrl: NavController, 
+    private gym: GymService, 
+    private storageService: StorageService) {
 
     
     // this.gym.getEmail().then(result => {
@@ -84,7 +83,6 @@ export class AppComponent {
 
   async logout() {
     this.storageService.remove('useremail');
-    //this.storage.remove('useremail');
     this.navCtrl.navigateRoot('/login');
   }
 
