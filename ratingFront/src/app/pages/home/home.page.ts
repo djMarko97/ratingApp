@@ -22,7 +22,6 @@ export class HomePage implements OnInit {
    getData(email){
      this.gym.getUserData(email)
      .subscribe(res =>{
-       console.log(res);
        this.user = res.user;
      });
    }

@@ -21,11 +21,11 @@
   <ion-list *ngIf="showList">
     <ion-item *ngFor= "let gym of searchResults">
       <h2>
-        <button ion-item *ngIf="results && showResults.length > 0" (click)="gymProfile(gym)">
+        <button class="btn" *ngIf="results && showResults.length > 0" (click)="gymProfile(gym)">
           {{gym.gymname}}
         </button>
       </h2>
-      <button ion-item *ngIf="noResults && showResults == 0">
+      <button class="btn" *ngIf="noResults && showResults == 0">
         {{gym.gymname}}
       </button>
     </ion-item>

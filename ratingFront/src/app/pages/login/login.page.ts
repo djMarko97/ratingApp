@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { RegisterService } from 'src/app/services/register.service';
-import { Storage } from '@ionic/storage-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +32,7 @@ export class LoginPage{
   async login(){
     await this.showLoading();
     if(this.email === undefined || this.password === undefined){
+      
       this.loadingCtrl.dismiss();
       this.showAlert('Login Error', 'You cannot submit empty fields');
       return;

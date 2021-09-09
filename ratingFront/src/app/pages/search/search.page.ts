@@ -23,6 +23,10 @@ export class SearchPage implements OnInit {
   }
 
   searchGym(){
+    if(!this.gymname){
+      this.showList = false;
+      return;
+    }
     this.showList = true;
     this.gym.searchGym(this.gymname)
       .subscribe(res =>{
@@ -35,8 +39,13 @@ export class SearchPage implements OnInit {
           this.results = false;
           this.noResults = true;
           this.showResults = res.results;
-          this.searchResults = [{"gymname": "No result found"}];
+          this.searchResults = [{'gymname': 'No result found'}];
         }
+      }, err =>{
+        this.results = false;
+        this.noResults = true;
+        this.showResults = [];
+        this.searchResults = [{'gymname': 'No result found'}];
       })
   }
 

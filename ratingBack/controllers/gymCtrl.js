@@ -106,7 +106,7 @@ exports.addMember = async (req, res) => {
 exports.search = async (req, res) =>{
      const searchName = req.body.gym;
      const regex = new RegExp(searchName, 'gi');//ignore case and global
-     const gym = await Gym.find({"gymname": regex});
+     const gym = await Gym.find({"gymname": regex}).populate('rating.user');
 
      if(gym.length > 0){
          return res.status(200).json({message: "Search Results", results: gym});
